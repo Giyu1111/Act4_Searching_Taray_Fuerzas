@@ -105,9 +105,6 @@ public class Searching {
         System.out.println("Enter target element: ");
         int target = scanner.nextInt();
 
-        bubbleSort(arr);
-        System.out.println("Sorted Array: " + Arrays.toString(arr));
-
         int index = -1;
 
         switch (choice) {
