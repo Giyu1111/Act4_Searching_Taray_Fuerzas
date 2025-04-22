@@ -124,9 +124,9 @@ public class Searching {
         }
 
         if (index >= 0) {
-            System.out.println("Search Result : " + target + " is found at index " + index + ".");
+            System.out.println("Search Result : Element " + target + " is found at index " + index + ".");
         } else {
-            System.out.println("Search Result " + target + " is not found in the array.");
+            System.out.println("Search Result : Element " + target + " is not found in the array.");
         }
 
         scanner.close();
