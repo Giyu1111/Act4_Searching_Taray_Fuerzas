@@ -99,7 +99,7 @@ public class Searching {
         System.out.print("Enter target element: ");
         int target = scanner.nextInt();
 
-        if (choice == 2 || choice == 3) {
+        if (choice == 2 || choice == 3 || choice == 4) {
             bubbleSort(arr);
             
         }
