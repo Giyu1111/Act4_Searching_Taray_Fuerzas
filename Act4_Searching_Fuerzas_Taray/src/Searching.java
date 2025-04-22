@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Searching {
@@ -29,17 +28,17 @@ public class Searching {
 
     public static int jumpSearch(int[] arr, int target) {
         int n = arr.length;
-        int step = (int) Math.floor(Math.sqrt(n));
+        int step = n / 4; 
         int prev = 0;
-
-        while (prev < n && arr[Math.min(step, n) - 1] < target) {
+    
+        while (prev < n && arr[step - 1] < target) {
             prev = step;
-            step += (int) Math.floor(Math.sqrt(n));
+            step += n / 4; 
             if (prev >= n)
                 return -1;
         }
-
-        for (int i = prev; i < Math.min(step, n); i++) {
+    
+        for (int i = prev; i < step && i < n; i++) { 
             if (arr[i] == target)
                 return i;
         }
@@ -54,8 +53,7 @@ public class Searching {
             i *= 2;
         }
 
-        int result = Arrays.binarySearch(arr, target);
-        return (result >= 0) ? result : -1;
+        return binarySearch(arr, target);
     }
 
     public static void bubbleSort(int[] arr) {
@@ -87,7 +85,7 @@ public class Searching {
 
         int choice = scanner.nextInt();
 
-        System.out.print("Enter number of elements: ");
+        System.out.print("Enter the number of elements: ");
         int n = scanner.nextInt();
         int[] arr = new int[n];
 
@@ -101,7 +99,6 @@ public class Searching {
 
         if (choice == 2 || choice == 3 || choice == 4) {
             bubbleSort(arr);
-            
         }
 
         int index = -1;
@@ -124,13 +121,16 @@ public class Searching {
         }
 
         if (index >= 0) {
-            System.out.println("Search Result : Element " + target + " is found at index " + index + ".");
+            System.out.println("Search Result: Element found at index " + index + ".");
         } else {
-            System.out.println("Search Result : Element " + target + " is not found in the array.");
+            System.out.println("Search Result: Element not found in the array.");
         }
 
         scanner.close();
     }
 }
+
+
+
 
 
