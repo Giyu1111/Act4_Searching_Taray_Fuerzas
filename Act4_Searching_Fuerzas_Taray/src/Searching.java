@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Searching {
-    // Linear Search
+  
     public static int linearSearch(int[] arr, int target) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == target) {
@@ -12,7 +12,7 @@ public class Searching {
         return -1;
     }
 
-    // Binary Search
+ 
     public static int binarySearch(int[] arr, int target) {
         int left = 0, right = arr.length - 1;
 
@@ -28,7 +28,7 @@ public class Searching {
         return -1;
     }
 
-    // Jump Search
+ 
     public static int jumpSearch(int[] arr, int target) {
         int n = arr.length;
         int step = (int) Math.floor(Math.sqrt(n));
@@ -48,7 +48,7 @@ public class Searching {
         return -1;
     }
 
-    // Exponential Search
+ 
     public static int exponentialSearch(int[] arr, int target) {
         if (arr[0] == target) return 0;
 
@@ -61,7 +61,7 @@ public class Searching {
         return (result >= 0) ? result : -1;
     }
 
-    // Bubble Sort
+   
     public static void bubbleSort(int[] arr) {
         int n = arr.length;
         boolean swapped;
@@ -69,14 +69,14 @@ public class Searching {
             swapped = false;
             for (int j = 0; j < n - 1 - i; j++) {
                 if (arr[j] > arr[j + 1]) {
-                    // Swap elements
+                 
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
                     swapped = true;
                 }
             }
-            if (!swapped) break; // Optimization: Stop if array is already sorted
+            if (!swapped) break; 
         }
     }
 
@@ -105,7 +105,6 @@ public class Searching {
         System.out.println("Enter target element: ");
         int target = scanner.nextInt();
 
-        // Sorting array before performing search
         bubbleSort(arr);
         System.out.println("Sorted Array: " + Arrays.toString(arr));
 
